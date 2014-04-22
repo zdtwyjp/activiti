@@ -1,6 +1,8 @@
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../main/config/ehcache.xsd" name="tc"
          updateCheck="false">
 
+	<diskStore path="java.io.tmpdir/hibernate/activiti-demo" />
+
     <defaultCache
             maxElementsInMemory="1000"
             eternal="false"
