@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- 流程引擎配置对象，用它可以产生流程引擎 -->	
+  <bean id="processEngineConfiguration"
+    class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+	
+	<!-- 连接数据库的参数-->
+    <property name="jdbcUrl" value="jdbc:mysql://192.168.2.4:3307/activiti" />
+    <property name="jdbcDriver" value="com.mysql.jdbc.Driver" />
+    <property name="jdbcUsername" value="root" />
+    <property name="jdbcPassword" value="root" />
+    
+    <property name="activityFontName" value="宋体" />
+
+    <!-- 自动产生表结构,相当于 hibernate.hbm2ddl.auto=update -->
+    <property name="databaseSchemaUpdate" value="true" />
+
+    <!-- 打开流程调度线程 -->
+    <property name="jobExecutorActivate" value="false" />
+
+    <!-- mail server configurations -->
+    <!-- 邮件服务器端口号 -->
+    <property name="mailServerPort" value="5025" />
+    <!-- 保存结束的历史流程 -->
+    <property name="history" value="full" />
+  </bean>
+
+</beans>
